@@ -1,10 +1,11 @@
 public class Libro
 {
     // instance variables
-    private String t;
+    private String t; 
     private String a;
     private int pag;
     private String referencia;
+    private int prestamos;
 
     /**
      * Constructor
@@ -15,6 +16,7 @@ public class Libro
         a = autor;
         pag = paginas;
         referencia = "";
+        prestamos = 0;
     }
     
     //Metodos de acceso
@@ -60,6 +62,10 @@ public class Libro
                 cadResult += "ZZZ";
             }
         
+        cadResult += ", ";
+        cadResult += "Prestamos: ";
+        cadResult += prestamos;
+        
         return cadResult;
     }
     
@@ -68,10 +74,20 @@ public class Libro
         return referencia;
     }
     
+    public int dimePrestamos()
+    {
+        return prestamos;
+    }
+    
     //Metodos de modificacion
     public void cambiaNumRef(String NumeroDeReferencia)
     {
         if(NumeroDeReferencia.length() >= 3)
             referencia = NumeroDeReferencia;
+    }
+    
+    public void prestar()
+    {
+        prestamos ++;
     }
 }
