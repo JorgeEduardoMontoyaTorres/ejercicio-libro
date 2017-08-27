@@ -71,6 +71,7 @@ public class Libro
     //Metodos de modificacion
     public void cambiaNumRef(String NumeroDeReferencia)
     {
-        referencia = NumeroDeReferencia;
+        if(NumeroDeReferencia.length() >= 3)
+            referencia = NumeroDeReferencia;
     }
 }
